@@ -56,7 +56,7 @@ startButton.addEventListener("click", function() {
         a1.addEventListener("click", function() {
         correct++;
         onOff = 0;
-        begin();
+        questions();
         });
         a2.addEventListener("click", function() {
             incorrect++;
@@ -94,7 +94,7 @@ startButton.addEventListener("click", function() {
         a2.addEventListener("click", function() {
             correct++;
             onOff = 0;
-            begin();
+            questions();
         });
         a3.addEventListener("click", function() {
             incorrect++;
@@ -132,7 +132,7 @@ startButton.addEventListener("click", function() {
         a3.addEventListener("click", function() {
             correct++;
             onOff = 0;
-            begin();
+            questions();
         });
         a4.addEventListener("click", function() {
             incorrect++;
@@ -170,10 +170,10 @@ startButton.addEventListener("click", function() {
         a4.addEventListener("click", function() {
             correct++;
             onOff = 0;
-            begin();
+            questions();
         });
     }
-    if(questionCounter == 1)
+    if(questionCounter == 4)
     {
         questionPlacement.textContent = "Question 5: question";
         a1Placement.textContent = "answer 1";
@@ -194,7 +194,7 @@ startButton.addEventListener("click", function() {
         timer.textContent = timer.textContent - 5; 
             correct++;
             onOff = 0;
-            begin();
+            questions();
         });
         a2.addEventListener("click", function() {
             incorrect++;
