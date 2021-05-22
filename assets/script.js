@@ -1,9 +1,9 @@
 var startButton = document.querySelector("#start");
 var timer = document.getElementById("countdown");
-var a1 = document.getElementById('#answer1');
-var a2 = document.getElementById('#answer2');
-var a3 = document.getElementById('#answer3');
-var a4 = document.getElementById('#answer4');
+var a1 = document.createElement("button");
+var a2 = document.createElement("button");
+var a3 = document.createElement("button");
+var a4 = document.createElement("button");
 var questionPlacement = document.createElement('h1');
 var a1Placement = document.createElement('h1');
 var a2Placement = document.createElement('h1');
@@ -18,14 +18,15 @@ var questionCounter = 0;
 startButton.addEventListener("click", function() {
     if(onOff == 0)
     {
-    timer.textContent = 10; // make it 60;
+    timer.textContent = 60; // make it 60;
     timerForQuestions();
     questions();
     document.body.appendChild(questionPlacement);
-    document.body.appendChild(a1Placement);
-    document.body.appendChild(a2Placement);
-    document.body.appendChild(a3Placement);
-    document.body.appendChild(a4Placement);
+        document.body.appendChild(a1Placement);
+        document.body.appendChild(a2Placement);
+        document.body.appendChild(a3Placement);
+        document.body.appendChild(a4Placement);
+        
     }
     onOff++;
   });
@@ -37,9 +38,33 @@ startButton.addEventListener("click", function() {
     {
         questionPlacement.textContent = "Question 1: question";
         a1Placement.textContent = "answer 1";
+            a1.innerHTML = "1";
+            document.body.appendChild(a1);
         a2Placement.textContent = "answer 2";
+        a2.innerHTML = "2";
+            document.body.appendChild(a2);
         a3Placement.textContent = "answer 3";
+            a3.innerHTML = "3";
+            document.body.appendChild(a3);
         a4Placement.textContent = "answer 4";
+            a4.innerHTML = "4";
+            document.body.appendChild(a4);
+        
+        a1.addEventListener("click", function() {
+        correct++;
+        });
+        a2.addEventListener("click", function() {
+            incorrect++;
+            timer.textContent = timer.textContent - 5; 
+        });
+        a3.addEventListener("click", function() {
+            incorrect++;
+            timer.textContent = timer.textContent - 5; 
+        });
+        a4.addEventListener("click", function() {
+            incorrect++;
+            timer.textContent = timer.textContent - 5; 
+        });
     }
     if(questionCounter == 1)
     {
